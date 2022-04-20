@@ -203,6 +203,7 @@ func (di *DubboInvoker) Invoke(ctx context.Context, invocation protocol.Invocati
 	methodName := invocation.MethodName()
 	triAttachmentWithErr := di.client.Invoke(methodName, in, invocation.Reply())
 	logger.Debugf("Response tri AttachmentWithError = %+v", triAttachmentWithErr)
+	logger.Debugf("Response tri Error = %+v", triAttachmentWithErr.GetError())
 	logger.Debugf("Response reply = %+v", invocation.Reply())
 	result.Err = triAttachmentWithErr.GetError()
 	result.Attrs = make(map[string]interface{})
