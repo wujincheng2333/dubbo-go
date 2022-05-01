@@ -253,7 +253,7 @@ func (s *ServiceConfig) Export() error {
 		if len(proto.Port) == 0 {
 			port = nextPort.Value.(string)
 			nextPort = nextPort.Next()
-		}else{
+		} else {
 			portNum, err := strconv.ParseInt(proto.Port, 10, 32)
 			if err != nil {
 				panic(perrors.New(fmt.Sprintf("Parse port error, err is {%v}", err)))
